@@ -1,5 +1,3 @@
-Viewed adv-12-unit-code-logic.html:1-383
-
 針對 **`adv-12-unit-code-logic` (程式路徑邏輯)** 單元，這是控制系統從「簡單腳本」轉向「專業工程」的關鍵飛躍。它要求學員具備 **系統架構思維**，能透過 **有限狀態機 (FSM)** 管理複雜行為，並利用 **非阻塞 (Non-blocking)** 技術實現即時多工處理。
 
 以下是在 **GitHub Classroom** 部署其作業 (Assignments) 的具體建議：
