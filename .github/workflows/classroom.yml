@@ -1,0 +1,41 @@
+name: GitHub Classroom Workflow
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Robustness Tests
+        id: robustness-tests
+        uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Robustness Logic Test
+          setup-command: ''
+          command: npm test
+          timeout: 10
+          max-score: 100
+
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          ROBUSTNESS-TESTS_RESULTS: "${{steps.robustness-tests.outputs.result}}"
+        with:
+          runners: robustness-tests

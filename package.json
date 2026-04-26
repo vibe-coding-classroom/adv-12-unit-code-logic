@@ -1,0 +1,11 @@
+{
+  "name": "adv-12-unit-code-logic",
+  "version": "1.0.0",
+  "description": "State machine logic and robustness testing for robot control",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.0"
+  }
+}
